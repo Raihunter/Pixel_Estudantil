@@ -1,9 +1,14 @@
 package pessoas;
+
+import disciplinas.Disciplina;
+import interfaces.Autenticavel;
+import sistema.Sistema;
+
 /**
  *
  * @author Raimundo
  */
-public class Diretoria extends Funcionario {
+public class Diretoria extends Funcionario implements Autenticavel {
 
     private static int gerarCodigo;
     private int codigo;
@@ -31,6 +36,12 @@ public class Diretoria extends Funcionario {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public Disciplina criarDisciplina(String nome, int codigo) {
+        Disciplina umaDisciplina = new Disciplina(nome, codigo);
+        return umaDisciplina;
     }
 
            

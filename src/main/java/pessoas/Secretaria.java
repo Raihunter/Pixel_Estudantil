@@ -1,9 +1,14 @@
 package pessoas;
+
+import interfaces.Autenticavel;
+import disciplinas.Disciplina;
+import sistema.Sistema;
+
 /**
  *
  * @author Raimundo
  */
-public class Secretaria extends Funcionario {
+public class Secretaria extends Funcionario implements Autenticavel{
     
     private static int gerarCodigo;
     private int codigo;
@@ -11,7 +16,7 @@ public class Secretaria extends Funcionario {
     
     public Secretaria(String nome, String email, String senha){
         super(nome, email, senha);
-        this.codigo = gerarCodigo++;//com isso o id aluno sera automatizado para todo secretaria criada.
+        this.codigo = gerarCodigo++;//com isso o id secretaria sera automatizado para todo secretaria criada.
         this.id += this.codigo;
     }
     
@@ -31,6 +36,12 @@ public class Secretaria extends Funcionario {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public Disciplina criarDisciplina(String nome, int codigo) {
+        Disciplina umaDisciplina = new Disciplina(nome, codigo);
+        return umaDisciplina;
     }
 
 }

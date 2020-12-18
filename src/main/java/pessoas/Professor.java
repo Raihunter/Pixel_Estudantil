@@ -11,7 +11,7 @@ public class Professor extends Pessoa {
     
     public Professor(String nome, String email, String senha){
         super(nome, email, senha);
-        this.codigo = gerarCodigo++;//com isso o id aluno sera automatizado para todo professor criado.
+        this.codigo = gerarCodigo++;//com isso o id professor sera automatizado para todo professor criado.
         this.id += this.codigo;
     }
     
