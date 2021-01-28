@@ -1,6 +1,6 @@
 package testes;
 
-import telas.Login.java;
+import telas.Login;
 
 /**
  *
